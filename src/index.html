@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style/output.css" />
+    <link rel="stylesheet" href="style/style.css" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link rel="icon" type="image/svg+xml" href="res/favicon.ico" />
+    <style>
+      /* Additional CSS */
+      .todo-list .task-check {
+        margin-right: 10px;
+      }
+      .task-actions button {
+        margin-left: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      id="timedate"
+      class="flex flex-col items-center justify-center min-h-screen bg-blue-300"
+    >
+      <div
+        id="date"
+        class="flex flex-col items-center justify-center gap-3 mb-1"
+      ></div>
+      <div id="time" class="mb-2 text-lg font-bold"></div>
+      <div class="profile">
+        <input
+          type="text"
+          id="user-name"
+          placeholder="Nama"
+          value="Ridho Ramadhan"
+        />
+        <input
+          type="text"
+          id="user-position"
+          placeholder="Jabatan"
+          value="Fullstack Developer"
+        />
+      </div>
+
+      <div class="container mx-auto rounded-lg shadow-lg">
+        <header>
+          <h1>To-Do List</h1>
+          <div class="alert-massage"></div>
+          <div class="input-section">
+            <input
+              type="text"
+              placeholder="add to do...."
+              class="w-full max-w-xs input input-bordered input-secondary"
+            />
+            <input
+              type="date"
+              class="w-full max-w-xs input input-bordered input-secondary schedule-date"
+            />
+            <select
+              class="w-full max-w-xs input input-bordered input-secondary priority-select"
+            >
+              <option value="low">Low</option>
+              <option value="medium">Medium</option>
+              <option value="high">High</option>
+            </select>
+            <button class="btn btn-secondary add-task-button">
+              <i class="bx bx-plus bx-sm"></i>
+            </button>
+          </div>
+        </header>
+
+        <div class="filter">
+          <div class="dropdown">
+            <select tabindex="0" class="m-1 btn">
+              Filter
+              <option value="1">All</option>
+              <option value="2">Pending</option>
+              <option value="3">Completed</option>
+            </select>
+          </div>
+          <button class="btn btn-secondary delete-all-btn">Delete All</button>
+        </div>
+        <table class="table w-full">
+          <thead>
+            <tr>
+              <th>Task</th>
+              <th>Date</th>
+              <th>Status</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody class="todo-list"></tbody>
+        </table>
+      </div>
+    </div>
+    <script src="./js/main.js"></script>
+  </body>
+</html>
